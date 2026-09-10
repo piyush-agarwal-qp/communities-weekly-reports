@@ -21,6 +21,10 @@ if _pkg_root not in sys.path:
 
 from lib.utils import ROOT, get_week_range
 
+# slow_endpoint_report.md tracks the top 20 for its own full breakdown, but the
+# engineering update only calls out the top 3.
+ENGINEERING_SLOW_ENDPOINT_TOP_N = 3
+
 
 def _ordinal_suffix(n: int) -> str:
     if 11 <= (n % 100) <= 13:
@@ -91,7 +95,12 @@ def parse_perf_body(md: str) -> str:
 
 
 def parse_slow_endpoint_body(md: str) -> str:
-    """Slow endpoint block stripped of the 'Top 3 Slowest Queries' header line."""
+    """
+    Slow endpoint block stripped of the 'Top N Slowest Queries' header line,
+    truncated to the top ENGINEERING_SLOW_ENDPOINT_TOP_N entries — the full
+    top-20 breakdown stays in slow_endpoint_report.md, only the top 3 get
+    called out here.
+    """
     block = _extract_copy_paste(md)
     if not block:
         return ""
@@ -100,7 +109,7 @@ def parse_slow_endpoint_body(md: str) -> str:
         lines = lines[1:]
     while lines and not lines[0].strip():
         lines = lines[1:]
-    return "\n".join(lines)
+    return "\n".join(lines[:ENGINEERING_SLOW_ENDPOINT_TOP_N])
 
 
 def assemble(start: str, end: str, folder: Path) -> str:
@@ -161,7 +170,7 @@ def assemble(start: str, end: str, folder: Path) -> str:
 
     lines += [
         "",
-        "5. Top 20 Slowest Queries",
+        f"5. Top {ENGINEERING_SLOW_ENDPOINT_TOP_N} Slowest Queries",
     ]
 
     if slow_body:

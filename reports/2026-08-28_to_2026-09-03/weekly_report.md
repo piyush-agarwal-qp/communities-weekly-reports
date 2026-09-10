@@ -59,28 +59,6 @@ Slow Query Report [2026-08-28 – 2026-09-03]
          • 500–1000ms : 265   (0.00%)
          • > 1000ms       : 160   (0.00%)
 
-Top 20 Slowest Queries
-         • /getCrosstabResults – Latency : 3162 ms
-         • /showRewardHistoryLog.do – Latency : 2041 ms
-         • /addProfileCrosstabReport.do – Latency : 1204 ms
-         • /getEngagementTrends – Latency : 1112 ms
-         • /getAllActiveChildCommentsForComment – Latency : 733 ms
-         • /reminderCount.do – Latency : 508 ms
-         • /sendSurveyToFilteredMember – Latency : 497 ms
-         • /getFilterMemberDetails – Latency : 449 ms
-         • /redeemReward – Latency : 405 ms
-         • /getActiveMembersTrend – Latency : 402 ms
-         • /showMembers.do – Latency : 359 ms
-         • /cacheInsightDataForInterval – Latency : 347 ms
-         • /api/nativehtml/panel.reward.PanelRewardRedeem – Latency : 335 ms
-         • /approveReward.do – Latency : 326 ms
-         • /showCampaignBatch.do – Latency : 309 ms
-         • /showPanelAdminSettings.do – Latency : 282 ms
-         • /showPanelSegment.do – Latency : 275 ms
-         • /showPanelProjectReminder.do – Latency : 266 ms
-         • /showMemberRewardHistoryLog.do – Latency : 261 ms
-         • /crossTab – Latency : 250 ms
-
 Metrics Sheet
 
 Metrics [2026-08-28 – 2026-09-03]

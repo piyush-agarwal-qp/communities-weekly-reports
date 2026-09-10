@@ -25,27 +25,10 @@ None
          • 500–1000ms : 233   (0.00%)
          • > 1000ms       : 154   (0.00%)
 
-5. Top 20 Slowest Queries
+5. Top 3 Slowest Queries
          • /getSurveyAbandonedMembers – Latency : 8758 ms
          • /getCrosstabResults – Latency : 2409 ms
          • /reminderCount.do – Latency : 960 ms
-         • /sendSurveyToFilteredMember – Latency : 653 ms
-         • /showPanelAdminSettings.do – Latency : 640 ms
-         • /showPanelProjectReminder.do – Latency : 406 ms
-         • /getAtRiskMembers – Latency : 388 ms
-         • /approveReward.do – Latency : 380 ms
-         • /redeemReward – Latency : 323 ms
-         • /showMembers.do – Latency : 306 ms
-         • /api/nativehtml/panel.reward.PanelRewardRedeem – Latency : 294 ms
-         • /getPanelFilter – Latency : 269 ms
-         • /searchMember.do – Latency : 258 ms
-         • /updateFilteredMemberStatus – Latency : 258 ms
-         • /ShareCrosstab – Latency : 256 ms
-         • /newPanelWizardName.do – Latency : 253 ms
-         • /showRewardResolvedLog.do – Latency : 248 ms
-         • /showRewardHistoryLog.do – Latency : 236 ms
-         • /getActiveMembersTrend – Latency : 233 ms
-         • /getEngagementTrends – Latency : 228 ms
 
 6. EQC Scores - NA
 7. Engineering Items

@@ -60,11 +60,6 @@ Slow Query Report [2026-08-14 – 2026-08-20]
          • 500–1000ms : 3.13K   (0.00%)
          • > 1000ms       : 95   (0.00%)
 
-Top 3 Slowest Queries
-         • /showPanelAdminSettings.do – Latency : 4562 ms
-         • /getCrosstabResults – Latency : 3477 ms
-         • /getSurveyAbandonedMembers – Latency : 2034 ms
-
 Metrics Sheet
 
 Metrics [2026-08-14 – 2026-08-20]

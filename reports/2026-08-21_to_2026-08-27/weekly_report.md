@@ -57,11 +57,6 @@ Slow Query Report [2026-08-21 – 2026-08-27]
          • 500–1000ms : 233   (0.00%)
          • > 1000ms       : 154   (0.00%)
 
-Top 3 Slowest Queries
-         • /getSurveyAbandonedMembers – Latency : 8758 ms
-         • /getCrosstabResults – Latency : 2409 ms
-         • /reminderCount.do – Latency : 1148 ms
-
 Metrics Sheet
 
 Metrics [2026-08-21 – 2026-08-27]
