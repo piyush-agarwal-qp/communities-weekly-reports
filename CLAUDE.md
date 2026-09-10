@@ -22,7 +22,8 @@ modules/                ← individual report generators
   radar_report.py       ← radar tickets
   performance_report.py ← slow query breakdown
   slow_endpoint_report.py ← top 3 slowest endpoints by weighted avg latency
-  assemble_report.py    ← combines all outputs into weekly_report.md
+  assemble_report.py    ← combines all outputs into weekly_report.md (PDM format)
+  engineering_update.py ← combines all outputs into engineering_update.md (Engineering format)
 lib/                    ← shared utilities (imported by modules)
   utils.py              ← ROOT path, get_week_range()
   metabase.py           ← Metabase auth + run_question()
@@ -62,7 +63,8 @@ reports/YYYY-MM-DD_to_YYYY-MM-DD/
   radar_report.md         ← radar tickets
   perf_report.md          ← slow query breakdown
   slow_endpoint_report.md ← top 3 slowest endpoints by weighted avg latency
-  weekly_report.md        ← combined copy-paste block
+  weekly_report.md        ← PDM format copy-paste block
+  engineering_update.md  ← Engineering Update format (section 7 is a placeholder — paste manually)
   raw/                    ← raw JSON fetched from Metabase
     errors_combined.json
 ```
@@ -92,4 +94,5 @@ If any script returns 401 / "session expired": re-copy `metabase.SESSION` from b
 | Radar tickets | `modules/radar_report.py` | ✓ |
 | Performance / slow queries | `modules/performance_report.py` | ✓ |
 | Top 3 slowest endpoints | `modules/slow_endpoint_report.py` | ✓ |
-| Combined assembler | `modules/assemble_report.py` | ✓ |
+| Combined assembler (PDM) | `modules/assemble_report.py` | ✓ |
+| Engineering Update assembler | `modules/engineering_update.py` | ✓ |

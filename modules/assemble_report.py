@@ -221,7 +221,7 @@ def assemble(start: str, end: str, folder: Path) -> str:
     if slow_endpoint_block:
         lines += [slow_endpoint_block, ""]
     else:
-        lines += ["Top 3 Slowest Queries", "", "• [slow-endpoint report pending]", ""]
+        lines += ["Top 20 Slowest Queries", "", "• [slow-endpoint report pending]", ""]
 
     # Metrics Sheet
     lines += ["Metrics Sheet", ""]

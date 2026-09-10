@@ -160,6 +160,10 @@ def main() -> None:
     from modules.assemble_report import main as assemble_main
     weekly_file = assemble_main(start=start, end=end)
     print(f"Weekly report → {weekly_file}")
+
+    from modules.engineering_update import main as eng_update_main
+    eng_file = eng_update_main(start=start, end=end)
+    print(f"Engineering update → {eng_file}")
     print()
 
     print("── Results ──────────────────────────")

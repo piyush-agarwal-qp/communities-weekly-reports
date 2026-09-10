@@ -38,7 +38,7 @@ from lib.utils import ROOT, get_week_range
 SLOW_ENDPOINT_Q_ID = int(os.environ.get("METABASE_QUESTION_ID_SLOW_ENDPOINT", "7304"))
 
 QUERY_TIMEOUT = 300  # same class of question as admin/portal perf — can be slow on heavy days
-TOP_N = 3
+TOP_N = 20
 
 
 def daily_splits(start: date, end_inclusive: date) -> list[tuple[str, str]]:
@@ -90,7 +90,7 @@ def aggregate(daily_rows: list[list[dict]]) -> list[dict]:
 
 
 def render_copy_paste(top: list[dict]) -> str:
-    lines = ["Top 3 Slowest Queries"]
+    lines = [f"Top {TOP_N} Slowest Queries"]
     for r in top[:TOP_N]:
         latency = int(round(r["avg_latency_ms"]))
         lines.append(f"         • {display_endpoint(r['endpoint'])} – Latency : {latency} ms")
@@ -184,7 +184,7 @@ def main(start_date: str = None, end_date: str = None, dry_run: bool = False,
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Weekly slow-endpoint report (top 3 by latency)")
+    parser = argparse.ArgumentParser(description="Weekly slow-endpoint report (top 20 by latency)")
     parser.add_argument("--from",    dest="date_from", help="Start date YYYY-MM-DD")
     parser.add_argument("--to",      dest="date_to",   help="End date YYYY-MM-DD")
     parser.add_argument("--dry-run", action="store_true")
