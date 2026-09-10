@@ -21,8 +21,9 @@ modules/                ← individual report generators
   metabase_report.py    ← survey/login metrics
   radar_report.py       ← radar tickets
   performance_report.py ← slow query breakdown
-  slow_endpoint_report.py ← top 3 slowest endpoints by weighted avg latency
-  assemble_report.py    ← combines all outputs into weekly_report.md
+  slow_endpoint_report.py ← top 20 slowest endpoints by weighted avg latency
+  assemble_report.py    ← combines all outputs into weekly_report.md (PDM format; no slow-endpoint section)
+  engineering_update.py ← combines all outputs into engineering_update.md (Engineering format; top 3 slowest endpoints)
 lib/                    ← shared utilities (imported by modules)
   utils.py              ← ROOT path, get_week_range()
   metabase.py           ← Metabase auth + run_question()
@@ -61,8 +62,9 @@ reports/YYYY-MM-DD_to_YYYY-MM-DD/
   error_report.md         ← 500 errors analysis
   radar_report.md         ← radar tickets
   perf_report.md          ← slow query breakdown
-  slow_endpoint_report.md ← top 3 slowest endpoints by weighted avg latency
-  weekly_report.md        ← combined copy-paste block
+  slow_endpoint_report.md ← top 20 slowest endpoints by weighted avg latency (full list lives here)
+  weekly_report.md        ← PDM format copy-paste block (no slow-endpoint section)
+  engineering_update.md  ← Engineering Update format (top 3 slowest endpoints; section 7 is a placeholder — paste manually)
   raw/                    ← raw JSON fetched from Metabase
     errors_combined.json
 ```
@@ -91,5 +93,6 @@ If any script returns 401 / "session expired": re-copy `metabase.SESSION` from b
 | 500 Errors | `modules/fetcher.py` + `modules/error_report.py` | ✓ |
 | Radar tickets | `modules/radar_report.py` | ✓ |
 | Performance / slow queries | `modules/performance_report.py` | ✓ |
-| Top 3 slowest endpoints | `modules/slow_endpoint_report.py` | ✓ |
-| Combined assembler | `modules/assemble_report.py` | ✓ |
+| Top 20 slowest endpoints | `modules/slow_endpoint_report.py` | ✓ |
+| Combined assembler (PDM) | `modules/assemble_report.py` | ✓ |
+| Engineering Update assembler | `modules/engineering_update.py` | ✓ |
